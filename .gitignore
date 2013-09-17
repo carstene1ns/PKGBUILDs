@@ -1,0 +1,18 @@
+#
+# ignore some files and folders
+#
+
+# source archives
+*.tar.gz
+*.tgz
+*.tar.bz2
+*.zip
+*.deb
+
+# extracted sources and built package tree
+**/src/
+**/pkg/
+
+# package source and package archives
+*.src.tar.gz
+*.pkg.tar.xz
