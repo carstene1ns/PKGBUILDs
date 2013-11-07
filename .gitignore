@@ -6,13 +6,13 @@
 *.tar.gz
 *.tgz
 *.tar.bz2
+*.tar.xz
 *.zip
 *.deb
 
-# extracted sources and built package tree
-**/src/
-**/pkg/
+# all subfolders (extracted sources, built package tree, git checkouts, etc.)
+*/**/
 
 # package source and package archives
-*.src.tar.gz
-*.pkg.tar.xz
+*.src.tar*
+*.pkg.tar*
