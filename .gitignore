@@ -16,3 +16,8 @@
 # package source and package archives
 *.src.tar*
 *.pkg.tar*
+
+# chroot building logs
+*namcap.log
+*build.log
+*package.log
