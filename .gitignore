@@ -18,6 +18,8 @@
 *.pkg.tar*
 
 # chroot building logs
-*namcap.log
-*build.log
-*package.log
+*-namcap.log
+*-build.log
+*-package.log
+*-pkgver.log
+*-prepare.log
