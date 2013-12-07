@@ -3,17 +3,17 @@
 # Contributer: Paul Barker <paul@paulbarker.me.uk>
 
 _pkgbase=poole
-pkgname=$_pkgbase-py3-hg
-pkgver=193.bcb7f8170b5e
+pkgname=$_pkgbase-hg
+pkgver=192.5ce9ce17942c
 pkgrel=1
-pkgdesc="A damn simple static website generator (python3 branch)"
+pkgdesc="A damn simple static website generator"
 arch=('i686' 'x86_64')
 url="https://bitbucket.org/obensonne/poole"
 license=('GPL3')
-conflicts=('poole-hg')
-depends=('python-markdown')
+conflicts=('poole-py3-hg')
+depends=('python2-markdown')
 makedepends=('mercurial')
-source=('hg+https://bitbucket.org/obensonne/poole#branch=py3')
+source=('hg+https://bitbucket.org/obensonne/poole')
 md5sums=('SKIP')
 
 pkgver() {
@@ -26,6 +26,8 @@ prepare() {
   # patch theme directory
   sed -i "s|opj(HERE, 'themes')|'/usr/share/$_pkgbase/themes'|" \
     $_pkgbase/$_pkgbase.py
+  # use python2
+  sed 's|env python|env python2|' -i $_pkgbase/$_pkgbase.py
 }
 
 package() {
