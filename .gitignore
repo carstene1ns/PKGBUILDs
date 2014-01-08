@@ -9,6 +9,8 @@
 *.tar.xz
 *.zip
 *.deb
+# installers
+*.run
 
 # all subfolders (extracted sources, built package tree, git checkouts, etc.)
 */**/
