@@ -11,7 +11,7 @@ arch=('i686' 'x86_64')
 url="http://$pkgname.sourceforge.net/"
 license=('GPL3')
 depends=('sdl_mixer')
-install="$pkgname.install"
+install=$pkgname.install
 source=("http://downloads.sourceforge.net/$pkgname/Bombermaaan_${pkgver}_${_pkgdate}_src.tar.gz"
         "http://downloads.sourceforge.net/$pkgname/Bombermaaan_${pkgver}_${_pkgdate}_res.tar.gz"
         "http://media1.gamefront.com/moddb/2011/02/17/Bombermaan_levels_pack.zip"

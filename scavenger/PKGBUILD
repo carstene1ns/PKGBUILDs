@@ -1,4 +1,4 @@
-# Maintainer: carstene1ns <arch carsten-teibes de>
+# Maintainer: carstene1ns <url/mail: arch carsten-teibes de>
 # Contributor: Anton Bazhenov <anton.bazhenov at gmail>
 # Contributor: Gerardo Exequiel Pozzi <vmlinuz386@yahoo.com.ar>
 
@@ -38,12 +38,12 @@ package() {
   cd sdlscav-145
 
   # install game files
-  install -d $pkgdir/usr/share/$pkgname/rc
-  install -m644 data/*rc $pkgdir/usr/share/$pkgname/rc
-  install -m644 data/*.{lbm,scl,wav} $pkgdir/usr/share/$pkgname
-  install -Dm755 sdlscav $pkgdir/usr/bin/$pkgname
+  install -d "$pkgdir"/usr/share/$pkgname/rc
+  install -m644 data/*rc "$pkgdir"/usr/share/$pkgname/rc
+  install -m644 data/*.{lbm,scl,wav} "$pkgdir"/usr/share/$pkgname
+  install -Dm755 sdlscav "$pkgdir"/usr/bin/$pkgname
 
   # install the pixmap and desktop file
-  install -Dm644 data/scav.png $pkgdir/usr/share/pixmaps/$pkgname.png
-  install -Dm644 ../$pkgname.desktop $pkgdir/usr/share/applications/$pkgname.desktop
+  install -Dm644 data/scav.png "$pkgdir"/usr/share/pixmaps/$pkgname.png
+  install -Dm644 ../$pkgname.desktop "$pkgdir"/usr/share/applications/$pkgname.desktop
 }

@@ -1,4 +1,4 @@
-# Maintainer: carstene1ns <arch carsten-teibes de>
+# Maintainer: carstene1ns <url/mail: arch carsten-teibes de>
 # Contributor: Arkham <arkham at archlinux dot us>
 # Contributor: Christoph Zeiler <archNOSPAM_at_moonblade.dot.org>
 # Contributor: JD Steffen
@@ -19,7 +19,7 @@ optdepends=('eduke32-hrp: High Resolution Pack'
             'timidity-freepats: free soundfont for music'
             'eduke32-shareware-episode: Duke Nukem 3D Demo')
 conflicts=('eduke32-svn')
-install="$pkgname.install"
+install=$pkgname.install
 source=("http://dukeworld.duke4.net/$pkgname/synthesis/${pkgver//_/-}/${pkgname}_src_${pkgver//_/-}.tar.xz"
         "$pkgname.png"
         "$pkgname.desktop")

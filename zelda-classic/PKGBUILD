@@ -1,4 +1,4 @@
-# Maintainer: carstene1ns <arch carsten-teibes de>
+# Maintainer: carstene1ns <url/mail: arch carsten-teibes de>
 
 pkgname=zelda-classic
 pkgver=2.5.0.24
@@ -37,29 +37,29 @@ package() {
   cd "Zelda Classic"
 
   # create folders
-  install -d $pkgdir/{opt/$pkgname/samplesoundset,usr/{bin,share/doc/$pkgname}}
+  install -d "$pkgdir"/{opt/$pkgname/samplesoundset,usr/{bin,share/doc/$pkgname}}
 
   # install binaries
-  install -m755 {romview,zelda,zlaunch,zquest}-l $pkgdir/opt/$pkgname
+  install -m755 {romview,zelda,zlaunch,zquest}-l "$pkgdir"/opt/$pkgname
 
   # install data files
-  install -m644 samplesoundset/patches.dat $pkgdir/opt/$pkgname/samplesoundset
-  install -m644 *.{qst,dat,nsf} $pkgdir/opt/$pkgname
+  install -m644 samplesoundset/patches.dat "$pkgdir"/opt/$pkgname/samplesoundset
+  install -m644 *.{qst,dat,nsf} "$pkgdir"/opt/$pkgname
 
   # install doc files
-  install -m644 *.{txt,zh} $pkgdir/usr/share/doc/$pkgname
+  install -m644 *.{txt,zh} "$pkgdir"/usr/share/doc/$pkgname
 
   # install launchers
-  install -m755 ../$pkgname.sh $pkgdir/usr/bin/$pkgname
-  install -m755 ../$pkgname-zlaunch.sh $pkgdir/usr/bin/$pkgname-zlaunch
-  install -m755 ../$pkgname-zquest.sh $pkgdir/usr/bin/$pkgname-zquest
+  install -m755 ../$pkgname.sh "$pkgdir"/usr/bin/$pkgname
+  install -m755 ../$pkgname-zlaunch.sh "$pkgdir"/usr/bin/$pkgname-zlaunch
+  install -m755 ../$pkgname-zquest.sh "$pkgdir"/usr/bin/$pkgname-zquest
 
   # install icon and desktop files
   for i in zelda-classic{,-zlaunch,-zquest}; do
-    install -Dm644 ../$i.png $pkgdir/usr/share/pixmaps/$i.png
-    install -Dm644 ../$i.desktop $pkgdir/usr/share/applications/$i.desktop
+    install -Dm644 ../$i.png "$pkgdir"/usr/share/pixmaps/$i.png
+    install -Dm644 ../$i.desktop "$pkgdir"/usr/share/applications/$i.desktop
   done
 
   # install soundset licence
-  install -Dm644 samplesoundset/COPYRIGHT $pkgdir/usr/share/licenses/zelda-classic/soundset
+  install -Dm644 samplesoundset/COPYRIGHT "$pkgdir"/usr/share/licenses/$pkgname/soundset
 }

@@ -1,4 +1,4 @@
-# Maintainer: carstene1ns <arch carsten-teibes de>
+# Maintainer: carstene1ns <url/mail: arch carsten-teibes de>
 # Contributor: josephgbr <rafael.f.f1@gmail.com>
 
 _pkgbase=allegro4
@@ -39,15 +39,15 @@ build() {
 }
 
 package() {
-  make -C build DESTDIR=$pkgdir install
+  make -C build DESTDIR="$pkgdir/" install
 
   # remove header files
-  rm -rf $pkgdir/usr/include
+  rm -rf "$pkgdir"/usr/include
 
   # rename allegro-config
-  mv $pkgdir/usr/bin/allegro-config{,-32}
+  mv "$pkgdir"/usr/bin/allegro-config{,-32}
 
   # link to license
-  install -d $pkgdir/usr/share/licenses/
-  ln -s $_pkgbase $pkgdir/usr/share/licenses/$pkgname
+  install -d "$pkgdir"/usr/share/licenses/
+  ln -s $_pkgbase "$pkgdir"/usr/share/licenses/$pkgname
 }

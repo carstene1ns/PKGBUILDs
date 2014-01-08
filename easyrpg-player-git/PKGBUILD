@@ -12,9 +12,9 @@ conflicts=('easyrpg-player')
 provides=('easyrpg-player')
 makedepends=('boost' 'git')
 depends=('sdl2_mixer' 'freetype2' 'pixman' 'expat')
-install="$pkgname.install"
-source=("easyrpg-readers"::"git://github.com/EasyRPG/Readers.git"
-        "$_pkgbase"::"git://github.com/EasyRPG/Player.git")
+install=$pkgname.install
+source=(easyrpg-readers::"git+https://github.com/EasyRPG/Readers.git"
+        $_pkgbase::"git+https://github.com/EasyRPG/Player.git")
 md5sums=('SKIP' 'SKIP')
 
 pkgver() {

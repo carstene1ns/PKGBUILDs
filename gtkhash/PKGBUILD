@@ -1,4 +1,4 @@
-# Maintainer: carstene1ns <arch carsten-teibes de>
+# Maintainer: carstene1ns <url/mail: arch carsten-teibes de>
 # Contributor: Jan Böhringer <janboe@gmail.com>
 # Contributor: Frédérik Paradis <fredy_14@live.fr>
 # Contributor: GI_Jack <GI_Jack@hushmail.com>
@@ -69,8 +69,8 @@ build() {
 package() {
   cd $pkgname-$pkgver
 
-  make DESTDIR=$pkgdir install
+  make DESTDIR="$pkgdir/" install
 
   # install desktop entry
-  install -Dm644 ../gtkhash.desktop $pkgdir/usr/share/applications/gtkhash.desktop
+  install -Dm644 ../gtkhash.desktop "$pkgdir"/usr/share/applications/gtkhash.desktop
 }

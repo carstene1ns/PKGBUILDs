@@ -1,4 +1,4 @@
-# Maintainer: carstene1ns <arch carsten-teibes de>
+# Maintainer: carstene1ns <url/mail: arch carsten-teibes de>
 # Contributor: Sven-Hendrik Haase <sh@lutzhaase.com>
 # Contributor: Juergen Hoetzel <juergen@archlinux.org>
 # Contributor: Kritoke <typeolinux@yahoo.com>
@@ -14,16 +14,14 @@ depends=('sdl_image' 'sdl_ttf' 'sdl_mixer' 'cegui-0.7' 'boost-libs')
 makedepends=('boost')
 source=("http://downloads.sourceforge.net/smclone/smc-$pkgver.tar.bz2"
         "http://downloads.sourceforge.net/smclone/SMC_Music_5.0_high.zip"
+        "smc.png"
         "smc-cegui-0.7.diff"
         "smc-boost_filesystem3.diff"
-        "smc.png"
         "smc.desktop")
 md5sums=('75ab7826303c49aec25b052a8b90287f'
          '0bccac29052d3eed93e88535312eaaa2'
-         '51dfea21b741ad19df14e738df52f1cf'
-         '309a5a6d4b3c0b3dc5e1b7f4de84086f'
          'efca7580e28748625eb676c9d24ee122'
-         'SKIP')
+         'SKIP' 'SKIP' 'SKIP')
 
 prepare() {
   cd $pkgname-$pkgver
@@ -57,5 +55,4 @@ package() {
   # install desktop file
   install -Dm644 ../$pkgname.desktop "$pkgdir"/usr/share/applications/$pkgname.desktop
   install -Dm644 ../$pkgname.png "$pkgdir"/usr/share/pixmaps/$pkgname.png
-
 }

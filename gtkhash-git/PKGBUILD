@@ -1,4 +1,4 @@
-# Maintainer: carstene1ns <arch carsten-teibes de>
+# Maintainer: carstene1ns <url/mail: arch carsten-teibes de>
 
 ##### OPTIONS #####
 _gtk_version=3
@@ -17,11 +17,11 @@ url='http://gtkhash.sourceforge.net/'
 license=('GPL')
 makedepends=('intltool')
 depends=('dconf')
-install=$_pkgbase.install
-source=("$_pkgbase::git://github.com/tristanheaven/gtkhash.git"
-        "$_pkgbase.desktop")
 conflicts=("$_pkgbase")
 provides=("$_pkgbase")
+install=$_pkgbase.install
+source=($_pkgbase::"git+https://github.com/tristanheaven/gtkhash.git"
+        "$_pkgbase.desktop")
 md5sums=('SKIP' 'SKIP')
 
 # gtk version
@@ -74,8 +74,8 @@ build() {
 package() {
   cd $_pkgbase
 
-  make DESTDIR=$pkgdir install
+  make DESTDIR="$pkgdir/" install
 
   # install desktop entry
-  install -Dm644 ../gtkhash.desktop $pkgdir/usr/share/applications/gtkhash.desktop
+  install -Dm644 ../gtkhash.desktop "$pkgdir"/usr/share/applications/gtkhash.desktop
 }
