@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# repkg from http://xyne.archlinux.ca/scripts/pacman/#repkg
+# by xyne 2013, modified by carstene1ns 2014
+
+if [[ -z $1 ]]; then
+  echo "usage: $0 <pkgfile>"
+  exit 1
+fi
+
+pkgfile="$(readlink -e $1)"
+
+if [[ -z $pkgfile ]]; then
+  echo "Error: file $1 does not exist."
+  exit 1
+fi
+
+cp PKGBUILD rePKGBUILD
+
+echo """
+package() {
+  msg2 \"repackaging \$pkgname to \$pkgver-\$pkgrel...\"
+  bsdtar -C \"\$pkgdir\" -xf \"$pkgfile\"
+}
+""" >> rePKGBUILD
+
+makepkg -fRp rePKGBUILD "$@"
+
+rm rePKGBUILD
