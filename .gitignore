@@ -19,6 +19,9 @@
 *.src.tar*
 *.pkg.tar*
 
+# generated files
+.AURINFO
+
 # chroot building logs
 *-namcap.log
 *-build.log

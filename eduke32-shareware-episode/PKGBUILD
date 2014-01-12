@@ -11,7 +11,6 @@ license=('shareware')
 depends=('eduke32')
 makedepends=('unzip')
 source=("ftp://ftp.3drealms.com/share/3dduke13.zip")
-md5sums=('04e4ca70b8a2d59ed56c451c5c1d5d39')
 sha256sums=('c67efd179022bc6d9bde54f404c707cbcbdc15423c20be72e277bc2bdddf3d0e')
 
 build() {

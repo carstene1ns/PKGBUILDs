@@ -12,8 +12,7 @@ license=('custom')
 depends=('lib32-zlib' "$_pkgbase=$pkgver")
 makedepends=('cmake' 'gcc-multilib')
 source=("$url/downloads/$_pkgbase-$pkgver.tar.bz2")
-md5sums=('c2c727a8a8deb623b521b52d0080f613')
-sha1sums=('327308c777009a41bbabb9159b18c4c0ac069537')
+sha256sums=('ca862097c0fb451f2cacd286194d071289342c107b6fe69079c079883ff66b69')
 
 build() {
   cd $_pkgbase-$pkgver

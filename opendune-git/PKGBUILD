@@ -18,9 +18,9 @@ source=($_pkgbase::"git+https://github.com/OpenDUNE/OpenDUNE.git"
         "$_pkgbase.sh"
         "$_pkgbase.desktop"
         "$_pkgbase.png")
-md5sums=('SKIP' 'SKIP' 'SKIP'
-        '4a6fef6e5bdde8ee7f038554bc5ed93b')
-sha256sums=('SKIP' 'SKIP' 'SKIP'
+sha256sums=('SKIP'
+            '56a2802f74b2bce644a34a7c2519307ec5925dbc111a1f132f6a19ef4b5e00f0'
+            'b80429ce421d6f781b1ef0c7c50293cf5970225e8de0fd6e379290d1fd91d4d7'
             '89c9cbf76b3f7ac62bf39235a64b191ee4b3bd437f88161b6757b6ec44e8888b')
 
 pkgver() {

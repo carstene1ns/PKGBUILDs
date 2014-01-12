@@ -12,7 +12,6 @@ makedepends=('cmake>=2.8' 'boost' 'git')
 depends=('sdl_mixer' 'freetype2' 'pixman' 'libpng' 'libjpeg' 'openal' 'libsndfile' 'expat')
 install=$pkgname.install
 source=($pkgname-$pkgver.tar.gz::"https://github.com/EasyRPG/Player/archive/$pkgver.tar.gz")
-md5sums=('51e1476fdae1b05917274d5fd3556561')
 sha256sums=('c376d1074f9a2fd7a732b0d3d37f9f60a29e0bdb013e26b60fb9c359ac74ffed')
 
 prepare () {

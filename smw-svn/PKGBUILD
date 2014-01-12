@@ -18,9 +18,10 @@ source=("smw::svn+http://supermariowar.googlecode.com/svn/trunk/"
         "gcc.patch"
         "libpng.patch"
         "smw.png")
-md5sums=('SKIP' 'SKIP' 'SKIP' 'SKIP'
-         'b7f5ef181e41eb0339be746ea03ff628')
-sha256sums=('SKIP' 'SKIP' 'SKIP' 'SKIP'
+sha256sums=('SKIP'
+            'c01da67abdc1c7bd46fd2c0420ca2795d77d143df1da7ce0ad95260816d2b80d'
+            '7509d33b70b11742fc83cb62dd3e70a51d35596f20eb3a38b3553946261fe986'
+            'be105515dbc850fcc8f73d894555ba71a7b89c52d7af2aa329a40f8088c2c75d'
             '28299d22e9ed8ebdecc8d936bfebef4a13381d20afda881c87661debe33f17d6')
 pkgver() {
   cd smw

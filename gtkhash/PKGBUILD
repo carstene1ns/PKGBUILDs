@@ -22,10 +22,8 @@ depends=('dconf')
 install=$pkgname.install
 source=(http://downloads.sourceforge.net/$pkgname/$pkgname-$pkgver.tar.xz
         gtkhash.desktop)
-md5sums=('f80567fdd8c4435e03b837d54f38f1bb'
-         'SKIP')
 sha256sums=('161d4f27f2d412c8cb3f566ca3aa8144942bbf836c18bcb1e5f79451e6f5dfdd'
-            'SKIP')
+            'f0312086093f0dd5ce0cfd6c9312abd42b57401960c39c19377372c154a32388')
 
 # gtk version
 if [ "$_gtk_version" = "3" ]; then

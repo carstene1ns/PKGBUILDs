@@ -22,7 +22,8 @@ provides=("$_pkgbase")
 install=$_pkgbase.install
 source=($_pkgbase::"git+https://github.com/tristanheaven/gtkhash.git"
         "$_pkgbase.desktop")
-md5sums=('SKIP' 'SKIP')
+sha256sums=('SKIP'
+            'f0312086093f0dd5ce0cfd6c9312abd42b57401960c39c19377372c154a32388')
 
 # gtk version
 if [ "$_gtk_version" = "3" ]; then

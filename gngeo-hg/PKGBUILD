@@ -20,10 +20,6 @@ source=("$_pkgbase"::"hg+$url"
         "$_pkgbase.desktop"
         "$_pkgbase.png"
         "$pkgname.install")
-md5sums=('SKIP'
-         '0e45bc9cf87a61bd3b92fb27c6a87dbd'
-         '25321e134708b239199c6ba49a9a2248'
-         'fa2be7e60f3390bbd4137f0dd593a2f7')
 sha256sums=('SKIP'
             'f1844db27e0f2d8046a107b0279c76c19a89f7d824da80590e93ea24382c3785'
             'b543425d51bd669fe5081b0b89492f18163c292194ac2a4acff683ba2a60063e'

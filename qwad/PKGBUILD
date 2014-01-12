@@ -9,7 +9,6 @@ url="http://www.nanolx.org"
 license=('GPL3')
 depends=('python2-crypto' 'python2-pyqt')
 source=("$url/downloads/Qwad/${pkgname}_$pkgver.tar.bz2")
-md5sums=('0481b2115bb02b838f5ad5324b2c9afb')
 sha256sums=('10689ff8a457ec25726ed1500c5a2c8013661a8e9e56342d8d425155214cbc2b')
 
 prepare() {

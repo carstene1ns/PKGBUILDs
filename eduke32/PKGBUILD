@@ -23,12 +23,9 @@ install=$pkgname.install
 source=("http://dukeworld.duke4.net/$pkgname/synthesis/${pkgver//_/-}/${pkgname}_src_${pkgver//_/-}.tar.xz"
         "$pkgname.png"
         "$pkgname.desktop")
-md5sums=('0064012a0b644d7da3bb93747dd84957'
-         'bc189b860c8562e10f01e0faed909089'
-         'SKIP')
 sha256sums=('c91a01ae0291bcfe5b4259af3fa93934da1ae5466ca4a9d592e07c075689b4ce'
             'b55a264b4682afabd49587d700d4c85ce6c2e7af7ce2764dd217ebe167549863'
-            'SKIP')
+            '9224aadf634448726d2e863ba9a455887dc3b90049238fe592b7f7b5634cbd79')
 
 build() {
   cd ${pkgname}_${pkgver//_/-}
