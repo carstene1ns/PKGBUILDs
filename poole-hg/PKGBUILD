@@ -13,7 +13,7 @@ license=('GPL3')
 conflicts=('poole-py3-hg')
 depends=('python2-markdown')
 makedepends=('mercurial')
-source=("hg+$url")
+source=($_pkgbase::"hg+$url")
 md5sums=('SKIP')
 
 pkgver() {

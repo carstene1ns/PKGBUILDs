@@ -14,10 +14,10 @@ depends=('sdl_mixer')
 conflicts=('atd')
 options=('!strip')
 install=$pkgname.install
-source=(https://bitbucket.org/runesoftdev/airline_public/downloads/airline.tycoon.deluxe_$_pkgver-english.demo_x86-$_pkgdate.mojo.run
-        $pkgname.sh
-        $pkgname.desktop
-        $pkgname-fs.desktop)
+source=("https://bitbucket.org/runesoftdev/airline_public/downloads/airline.tycoon.deluxe_$_pkgver-english.demo_x86-$_pkgdate.mojo.run"
+        "$pkgname.sh"
+        "$pkgname.desktop"
+        "$pkgname-fs.desktop")
 # this sha256sum is provided by runesoft:
 sha256sums=('ff0b2f03cbfda4fe13aa803ced484d29e528a3b1bd30f04b03617c10ce7cda55'
             '804921da338e7a29351d83de33475c7ede92e7f8fcfbc0b7755f9b05739e4906'

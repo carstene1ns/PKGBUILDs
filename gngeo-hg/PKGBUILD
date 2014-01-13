@@ -16,7 +16,7 @@ makedepends=('mercurial' 'nasm' 'glu')
 conflicts=("$_pkgbase")
 provides=("$_pkgbase")
 install=$pkgname.install
-source=("$_pkgbase"::"hg+$url"
+source=($_pkgbase::"hg+$url"
         "$_pkgbase.desktop"
         "$_pkgbase.png"
         "$pkgname.install")
