@@ -7,10 +7,10 @@ pkgver=$_pkgver.$_pkgdate
 pkgrel=1
 pkgdesc="This is a demo of Airline Tycoon Deluxe for Linux."
 url="http://rune-soft.com/Games/Released/Game-239/game=Airline_Tycoon_Deluxe-6"
-arch=('x86_64' 'i686')
+arch=('i686' 'x86_64')
 license=('custom')
 depends=('sdl_mixer')
-[ $CARCH == x86_64 ] && depends=('lib32-gcc-libs' 'lib32-sdl')
+[ "$CARCH" == "x86_64" ] && depends=('lib32-gcc-libs' 'lib32-sdl')
 conflicts=('atd')
 options=('!strip')
 install=$pkgname.install
