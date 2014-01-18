@@ -1,0 +1,35 @@
+# Maintainer: carstene1ns <url/mail: arch carsten-teibes de>
+# Contributor: Axilleas P <axilleas archlinux info>
+# Contributor:  <clu>
+
+pkgname=hyde
+pkgver=0.8.8
+pkgrel=1
+pkgdesc="A static website generator written in Python."
+arch=('any')
+url="http://hyde.github.io"
+license=('MIT')
+depends=('python2-jinja' 'python2-smartypants' 'python2-fswrap' 'python2-yaml'
+         'python2-typogrify' 'python2-commando'  'python2-pygments'
+         'python2-markdown' 'python2-markupsafe')
+makedepends=('python2-setuptools')
+conflicts=('hyde-git')
+source=("https://pypi.python.org/packages/source/h/$pkgname/$pkgname-$pkgver.tar.gz")
+sha256sums=('4c6bc45c2c82e0f11fc7c09ac6284532a71f31fdaa07782c79cf355e3cadb1e6')
+
+prepare() {
+  cd $pkgname-$pkgver
+
+  # python2 shebang
+  sed 's|env python$|&2|' -i hyde/main.py
+  # move dep jinja2 2.7.1 -> 2.7.2 (possible, no syntax change)
+  sed 's|Jinja2==2.7.1|Jinja2==2.7.2|' -i setup.py
+}
+
+package() {
+  cd $pkgname-$pkgver
+
+  python2 setup.py install --root="$pkgdir/" --optimize=1
+
+  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}
