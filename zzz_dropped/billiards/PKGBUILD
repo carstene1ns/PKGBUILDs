@@ -1,0 +1,34 @@
+# Maintainer: 404
+# Contributor: carstene1ns <arch carsten-teibes de>
+# Contributor: Heine Laursen <zannvip at gmail dot com>
+# Contributor: Christoph Zeiler <archNOSPAM_at_moonblade.dot.org>
+
+pkgname=billiards
+pkgver=0.4.1
+pkgrel=2
+pkgdesc="Free cue sports simulator aiming for physical accuracy and simplicity"
+arch=('i686' 'x86_64')
+url="http://www.nongnu.org/billiards/"
+license=('GPL3')
+depends=('lua51' 'ode-compat' 'libpng' 'openal' 'mesa' 'techne')
+install="$pkgname.install"
+source=("http://download.savannah.gnu.org/releases/$pkgname/$pkgname-$pkgver.tar.gz")
+md5sums=('c00786f1ca0cd62a276f6d6383a75249')
+
+build() {
+  cd $pkgname-$pkgver
+
+  # uncomment the following lines, if the linker has problems finding lua
+  #LUA_CFLAGS="$(pkg-config --cflags lua51)" \
+  #LUA_LIBS="$(pkg-config --libs lua51)" \
+  #LUAC=/usr/bin/luac5.1 \
+  ./configure --prefix=/usr
+
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+
+  make DESTDIR="$pkgdir/" install
+}
