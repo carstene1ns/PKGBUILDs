@@ -9,11 +9,18 @@
 *.tar.xz
 *.zip
 *.deb
+*.rpm
 # installers
 *.run
 
-# all subfolders (extracted sources, built package tree, git checkouts, etc.)
+# deprecated patches and notes
+__*.patch
+__*.txt
+
+# all subfolders (extracted sources, built package tree, vcs checkouts, etc.)
 */**/
+# but exclude folders of dropped packages
+!zzz_dropped/**/
 
 # package source and package archives
 *.src.tar*
