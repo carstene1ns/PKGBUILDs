@@ -12,6 +12,7 @@
 *.rpm
 # installers
 *.run
+*.exe
 
 # deprecated patches and notes
 __*.patch
