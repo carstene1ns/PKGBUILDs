@@ -3,14 +3,14 @@
 # Contributer: Paul Barker <paul@paulbarker.me.uk>
 
 _pkgbase=poole
-pkgname=$_pkgbase-hg
+pkgname=python2-$_pkgbase-hg
 pkgver=r192.5ce9ce17942c
 pkgrel=1
 pkgdesc="A damn simple static website generator"
 arch=('any')
 url="https://bitbucket.org/obensonne/poole"
 license=('GPL3')
-conflicts=('poole-py3-hg')
+conflicts=('python-poole-hg')
 depends=('python2-markdown')
 makedepends=('mercurial')
 source=($_pkgbase::"hg+$url")
