@@ -1,0 +1,6 @@
+
+post_install() {
+  echo "The game might crash on first start, but it should create it's config file."
+  echo "You can change resolution and switch to OpenGL renderer after first start, edit"
+  echo "'~/.lexaloffle/Zen Puzzle Garden/config.txt' ('video_mode' and 'opengl_blit')"
+}
