@@ -1,0 +1,27 @@
+# Maintainer: 404
+# Contributor: carstene1ns <url/mail: arch carsten-teibes de>
+# Contributor: Lucas de Vries <lucas@glacicle.org>
+
+pkgname=anigrate-git
+pkgver=1.0.pre.r3.gf4c991b
+pkgrel=1
+pkgdesc="Simple CLI watch list manager for anime and tv series (development version)"
+license=('custom: WTFPL')
+arch=('any')
+url="http://anigrate.glacicle.com/"
+depends=('python2' 'python2-sqlalchemy' 'python2-pysqlite')
+optdepends=('python2-flup: fcgi or scgi interfaces')
+makedepends=('git')
+source=(anigrate::"git+https://github.com/GGLucas/anigrate.git")
+md5sums=('SKIP')
+
+pkgver() {
+  cd anigrate
+  git describe --long --tags | sed -r 's/^v//;s/([^-]*-g)/r\1/;s/-/./g'
+}
+
+package() {
+  cd anigrate
+  install -Dm755 anigrate "$pkgdir"/usr/bin/anigrate
+  install -Dm644 config.example "$pkgdir"/usr/share/anigrate/config.example
+}
