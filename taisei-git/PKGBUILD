@@ -14,7 +14,7 @@ conflicts=('taisei')
 makedepends=('git' 'cmake')
 install=taisei.install
 source=(taisei::"git+https://github.com/laochailan/taisei.git")
-md5sums=('SKIP') 
+md5sums=('SKIP')
 
 pkgver() {
   cd taisei

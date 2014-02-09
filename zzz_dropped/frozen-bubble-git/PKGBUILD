@@ -19,7 +19,7 @@ conflicts=('frozen-bubble')
 source=(frozen-bubble::"git+https://github.com/kthakore/frozen-bubble.git"
         "frozen-bubble.desktop")
 md5sums=('SKIP'
-         '01b10b77ba6ad856f5c199121c582272')
+         '3af576975b9fb702310417871aac68f4')
 
 pkgver() {
   cd frozen-bubble

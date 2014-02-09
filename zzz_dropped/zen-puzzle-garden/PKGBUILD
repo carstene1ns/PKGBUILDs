@@ -35,7 +35,7 @@ source=("hib://${pkgname}_${pkgver}_i386.tar.gz"
         "$pkgname.desktop"
         "$pkgname.sh")
 sha256sums=('8ad69e4dee5aa5b5d6edd041bc158a7e5eb5e0b2b14ce3c7049a91edd0786d95'
-            'b8bfb067705f1c9c0597c74d5942de344a7afe80a92381382ee9937c4172afab'
+            '20c658e9db540c2387c0c87faf86ae2ca9b4298c7da8ab846364e3152a8c1bf6'
             'fe03231e8c66953a3f825d831f3d89fb2eab3fc466b470e811386f48bd15386f')
 
 package(){

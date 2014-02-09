@@ -4,4 +4,4 @@ Exec=fakenes
 Icon=fakenes
 Type=Application
 Comment=A NES emulator
-Categories=Application;Game;Emulator;
+Categories=Game;Emulator;

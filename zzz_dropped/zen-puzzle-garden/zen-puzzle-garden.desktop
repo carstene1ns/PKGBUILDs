@@ -3,5 +3,5 @@ Type=Application
 Name=Zen Puzzle Garden
 Exec=zen-puzzle-garden
 Icon=zen-puzzle-garden
-Categories=Game;LogicGame
+Categories=Game;LogicGame;
 Terminal=false
