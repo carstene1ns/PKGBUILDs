@@ -5,7 +5,7 @@
 pkgname=yamagi-quake2
 pkgver=5.21
 pkgrel=1
-pkgdesc="Enhanced Quake II engine optimized for modern systems."
+pkgdesc="Enhanced Quake II engine optimized for modern systems"
 url="http://www.yamagi.org/quake2/"
 arch=('i686' 'x86_64')
 license=('custom: Info-ZIP' 'GPL2')

@@ -13,6 +13,7 @@
 # installers
 *.run
 *.exe
+*.7z
 
 # deprecated patches and notes
 __*.patch
@@ -36,3 +37,17 @@ __*.txt
 *-package.log
 *-pkgver.log
 *-prepare.log
+
+# files for specific packages
+# srb2-data data files:
+srb2-data/*.xpm
+srb2-data/*.dta
+srb2-data/*.plr
+srb2-data/*.wpn
+srb2-data/*.wad
+# srb2-bin binary:
+srb2-bin/lsdlsrb2
+# poole symlink:
+python2-poole-hg/poole
+# sdl_sound symlink:
+sdl_sound-hg/sdl_sound

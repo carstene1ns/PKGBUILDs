@@ -5,7 +5,7 @@
 pkgname=hyde
 pkgver=0.8.8
 pkgrel=1
-pkgdesc="A static website generator written in Python."
+pkgdesc="A static website generator written in Python"
 arch=('any')
 url="http://hyde.github.io"
 license=('MIT')

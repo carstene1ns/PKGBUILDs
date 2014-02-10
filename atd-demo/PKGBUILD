@@ -5,7 +5,7 @@ _pkgdate=20130212
 _pkgver=1.08
 pkgver=$_pkgver.$_pkgdate
 pkgrel=1
-pkgdesc="This is a demo of Airline Tycoon Deluxe for Linux."
+pkgdesc="Demo of Airline Tycoon Deluxe for Linux"
 url="http://rune-soft.com/Games/Released/Game-239/game=Airline_Tycoon_Deluxe-6"
 arch=('i686' 'x86_64')
 license=('custom')
