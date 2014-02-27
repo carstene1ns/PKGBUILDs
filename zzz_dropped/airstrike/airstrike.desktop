@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=AirStrike
+Exec=airstrike
+Icon=airstrike
+Terminal=false
+Categories=Game;ArcadeGame;
