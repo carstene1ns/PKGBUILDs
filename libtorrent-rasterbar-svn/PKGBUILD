@@ -11,14 +11,13 @@ url="http://www.rasterbar.com/products/libtorrent/"
 license=('BSD')
 depends=('boost-libs' 'python2' 'geoip')
 makedepends=('boost' 'subversion')
-conflicts=('libtorrent-rasterbar')
-provides=('libtorrent-rasterbar')
-source=($_pkgbase::"svn+https://svn.code.sf.net/p/libtorrent/code/trunk")
+conflicts=("$_pkgbase")
+provides=("$_pkgbase")
+source=($_pkgbase::"svn+http://svn.code.sf.net/p/libtorrent/code/trunk")
 md5sums=('SKIP')
 
 pkgver() {
   cd $_pkgbase
-
   local ver="$(svnversion)"
   printf "r%s" "${ver//[[:alpha:]]}"
 }
@@ -37,6 +36,5 @@ package() {
   cd $_pkgbase
 
   make DESTDIR="$pkgdir/" install
-
   install -Dm644 COPYING "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
 }
