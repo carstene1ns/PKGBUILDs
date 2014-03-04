@@ -9,7 +9,6 @@ arch=('i686' 'x86_64')
 license=('GPL2')
 depends=('allegro')
 makedepends=('cmake')
-conflicts=("$pkgname-git")
 optdepends=('fluidsynth: software synthesizer for midi music'
             'soundfont-fluid: good soundfont for use with fluidsynth'
             'timidity++: alternative midi sequencer'
