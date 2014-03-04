@@ -1,29 +1,35 @@
 # Maintainer: carstene1ns <url/mail: arch carsten-teibes de>
 
-pkgname=dunedynasty
-pkgver=1.5.7
+_pkgbase=dunedynasty
+pkgname=$_pkgbase-git
+pkgver=1.5.7.r186.g9bf26be
 pkgrel=1
-pkgdesc="Enhanced continuation of the classic real-time strategy game Dune II"
+pkgdesc="Enhanced continuation of the classic real-time strategy game Dune II (development version)"
 url="http://dunedynasty.sourceforge.net/"
 arch=('i686' 'x86_64')
 license=('GPL2')
-depends=('allegro')
+depends=('allegro' 'enet')
 makedepends=('cmake')
-conflicts=("$pkgname-git")
+conflicts=("$_pkgbase")
+provides=("$_pkgbase")
 optdepends=('fluidsynth: software synthesizer for midi music'
             'soundfont-fluid: good soundfont for use with fluidsynth'
             'timidity++: alternative midi sequencer'
             'timidity-freepats: patch set for timidity++'
             'libmad: for mp3 music support')
-install=$pkgname.install
-changelog=$pkgname.ChangeLog
-source=("http://downloads.sourceforge.net/$pkgname/$pkgname-$pkgver.tar.gz"
-        "$pkgname.desktop")
-sha256sums=('a50e5a643db6835acb8cf7afd262b5eeba3fac01151ea51afcb1f5914d35a5c5'
+install=$_pkgbase.install
+source=($_pkgbase::"git+http://git.code.sf.net/p/dunedynasty/dunedynasty"
+        "$_pkgbase.desktop")
+sha256sums=('SKIP'
             '4bc37a890a354e274b152a03fffa61d2da1609131c848742e1e4bca537176493')
 
+pkgver() {
+  cd $_pkgbase
+  git describe --long --tags | sed 's/^v//;s/-/.r/;s/-/./'
+}
+
 prepare() {
-  cd $pkgname-$pkgver
+  cd $_pkgbase
 
   # set doc folder
   sed -i 's|doc/dunedynasty-${DUNE_DYNASTY_VERSION}|share/doc/dunedynasty|' \
@@ -34,21 +40,21 @@ prepare() {
 }
 
 build() {
-  cd $pkgname-$pkgver
+  cd $_pkgbase
 
-  cmake ./ -DCMAKE_INSTALL_PREFIX=/usr -DDUNE_DATA_DIR=/usr/share/$pkgname
+  cmake ./ -DCMAKE_INSTALL_PREFIX=/usr -DDUNE_DATA_DIR=/usr/share/$_pkgbase
   make
 }
 
 package() {
-  cd $pkgname-$pkgver
+  cd $_pkgbase
 
   make DESTDIR="$pkgdir/" install
 
   # remove license, part of common licenses
-  rm -f "$pkgdir"/usr/share/doc/$pkgname/COPYING
+  rm -f "$pkgdir"/usr/share/doc/$_pkgbase/COPYING
 
   # desktop entry
-  install -Dm644 src/video/dune2_32x32.xpm "$pkgdir"/usr/share/pixmaps/$pkgname.xpm
-  install -Dm644 ../$pkgname.desktop "$pkgdir"/usr/share/applications/$pkgname.desktop
+  install -Dm644 src/video/dune2_32x32.xpm "$pkgdir"/usr/share/pixmaps/$_pkgbase.xpm
+  install -Dm644 ../$_pkgbase.desktop "$pkgdir"/usr/share/applications/$_pkgbase.desktop
 }
