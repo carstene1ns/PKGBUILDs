@@ -5,7 +5,7 @@ diff -rupN AlephOne-20140104/Source_Files/FFmpeg/SDL_ffmpeg.c AlephOne-20140104.
  }
  #endif
  
-+/* set magic number, that has been removed from upstream */
++/* set magic number for 1 second of 48khz 32bit audio (removed from upstream) */
 +#ifndef AVCODEC_MAX_AUDIO_FRAME_SIZE
 +#define AVCODEC_MAX_AUDIO_FRAME_SIZE 192000
 +#endif

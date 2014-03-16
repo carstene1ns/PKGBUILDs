@@ -32,7 +32,7 @@ source=("http://downloads.sourceforge.net/marathon/AlephOne-$_pkgdate.tar.bz2"
 sha256sums=('7f7d35c1d99cddd7cd0b47d3e4b84311373b04c60402ce86e9d85c36dfbaabcd'
             'b2b01a3120b61e56cecb6409585118a5e907171fef0e4dc25afaf13fcea5c5d5'
             'b06a57cffbf5ae3df916de1baa457e53c78a7ed5af22e7e330da3fc405602351'
-            'dc9fec233e459eba9f5ede9d7b48dafc3056eb195af58b928e9182105944b8a4')
+            'cd0f169ea4a79d4b782ee0c03c35b254d947b8fc6af88cc5563d71f864b891f8')
 
 prepare() {
   cd AlephOne-$_pkgdate
