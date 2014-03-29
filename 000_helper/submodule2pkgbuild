@@ -1,0 +1,131 @@
+#!/bin/bash
+
+###############################################################################
+# submodule2pkgbuild.sh - This script outputs the commit hashes and zip package
+#   URLs of all used (sub-)submodules of a git repository at a given tag for
+#   easy inclusion in PKGBUILD files. Currently only supports github.com.
+# version 0.1 by carstene1ns, 03/2014 - source code is in the public domain
+###############################################################################
+
+# check if called without or too many arguments
+if [[ $# < 1 || $# > 2 ]]; then
+  echo "Usage: submodule2pkgbuild <folder> <tag>"
+  exit 0
+fi
+
+# set some helper variables
+FOLDER=$1
+TR=$(tput setaf 1) # red
+TG=$(tput setaf 2) # green
+TY=$(tput setaf 3) # yellow
+TW=$(tput setaf 7) # white
+TB=$(tput bold)    # bold
+TN=$(tput sgr0)    # reset
+
+# check if $FOLDER is actually a folder
+if [[ ! -d $FOLDER ]]; then
+  echo "${TB}${TY} ==> ${TR}'$FOLDER' is not a folder!${TN}"
+  exit 1
+fi
+
+# use HEAD of master, if no tag given
+if [[ -z $2 ]]; then
+  GITTAG="master"
+else
+  GITTAG="tags/$2"
+fi
+
+# change into folder
+pushd $FOLDER > /dev/null
+
+# get repository url and path
+REPOURL=$(git ls-remote --get-url origin)
+REPOPATH=$PWD
+
+# currently only works for github
+if [[ ! $REPOURL =~ "github.com" ]]; then
+  echo "${TB}${TY} ==> ${TR}not a github repo!${TN}"
+  exit 1
+fi
+
+# update repository
+echo "${TB}${TW}Pulling latest changes...${TN}"
+git pull -q origin master
+
+# error?
+if [[ $? != 0 ]]; then
+  echo "${TB}${TY} ==> ${TR}git had a problem (see above)!${TN}"
+  exit 1
+fi
+
+# change repository HEAD
+echo "${TB}${TW}Checking out '${TG}$GITTAG${TW}'...${TN}"
+git checkout -q $GITTAG -- 
+
+# error?
+if [[ $? != 0 ]]; then
+  echo "${TB}${TY} ==> ${TR}git had a problem (see above)!${TN}"
+  exit 1
+fi
+
+# update all (sub-)submodules
+echo "${TB}${TW}Updating submodules...${TN}"
+git submodule -q update --init --recursive
+git submodule -q update --recursive
+
+# get commit hashes and path names
+SMHASHES=$(git submodule -q foreach --recursive 'echo "$toplevel/$path;$sha1,$(git ls-remote --get-url origin)"')
+
+# error?
+if [[ $? != 0 ]]; then
+  echo "${TB}${TY} ==> ${TR}git had a problem (see above)!${TN}"
+  exit 1
+fi
+
+# no submodules?
+if [[ -z $SMHASHES ]]; then
+  echo "${TB}${TY} ==> ${TR}repository has no submodules!${TN}"
+  exit 1
+fi
+
+# output ######################################################################
+
+echo "${TB}${TW}Add this to your PKGBUILD:${TN}"
+
+echo "source=(..."
+for line in $SMHASHES; do
+  # helper variables
+  temp=${line/*;}
+  commithash=${temp%,*}
+  url=${temp/*,}
+  url=${url%.git}
+  repo=${url/*\/}
+
+  echo "        ${repo}-for-\$pkgver.tar.gz::\"${url}/archive/${commithash}.tar.gz\""
+done
+echo ""
+
+echo "prepare() {..."
+echo "  # copy submodules to right location"
+for line in $SMHASHES; do
+  # helper variables
+  temp=${line/*;}
+  commithash=${temp%,*}
+  url=${temp/*,}
+  url=${url%.git}
+  repo=${url/*\/}
+  temp=${line%;*}
+  submodulepath=${temp/$REPOPATH}
+
+  echo "  cp -rup ${repo}-${commithash}/* \$pkgname-\$pkgver${submodulepath}"
+done
+
+# cleanup #####################################################################
+
+echo "${TB}${TW}Cleaning up...${TN}"
+
+# change repository HEAD back
+git checkout -q HEAD^ -- 
+
+# change back to start folder
+popd > /dev/null
