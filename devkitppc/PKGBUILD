@@ -53,11 +53,9 @@ BUILD_DKPRO_SRCDIR=$PWD
 BUILD_DKPRO_AUTOMATED=1
 END
 
-  # hack to disable libogc+libfat building
-  tar cjf libogc-src-1.8.12.tar.bz2 buildscripts/README.TXT
-  cp libogc-src-1.8.12.tar.bz2 libfat-src-1.0.12.tar.bz2
-  mkdir -p buildscripts/.devkitPPC/lib{ogc-1.8.12,fat-1.0.12}
-  touch buildscripts/.devkitPPC/lib{ogc-1.8.12,fat-1.0.12}/installed
+  # disable building of libraries, we have seperate packages
+  sed '17,$d' -i buildscripts/dkppc/scripts/build-crtls.sh
+  sed '239,247d;s|$targetarchives ||' -i buildscripts/build-devkit.sh
 }
 
 build() {
