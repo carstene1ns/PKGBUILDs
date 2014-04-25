@@ -23,7 +23,6 @@ sha256sums=('fecfcec4a4f3d3c1c459f8fa314a6fd00e920d69968c7c1a67f7894f14ca2d4e'
 
 build() {
   source /etc/profile.d/devkitppc.sh
-
   make
 }
 

@@ -35,7 +35,6 @@ build() {
 
   # remove leftover build dir
   rm -rf build
-
   make
 }
 

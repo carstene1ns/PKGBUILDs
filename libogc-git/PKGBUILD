@@ -30,8 +30,8 @@ pkgver() {
 
 build() {
   cd libogc
-  source /etc/profile.d/devkitppc.sh
 
+  source /etc/profile.d/devkitppc.sh
   make
 }
 

@@ -44,7 +44,6 @@ build() {
   cd $_pkgbase
 
   ./configure --prefix=/usr
-
   # force single threaded build
   make -j1
 }

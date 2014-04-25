@@ -68,7 +68,6 @@ build() {
   ./autogen.sh
   ./configure --prefix=/usr --disable-schemas-compile --enable-gtkhash \
               --enable-linux-crypto --enable-nettle $_pkgoptions
-
   make
 }
 

@@ -18,7 +18,6 @@ options=(!strip libtool staticlibs)
 
 build() {
   source /etc/profile.d/devkitarm.sh
-
   make
 }
 

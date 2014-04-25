@@ -36,7 +36,6 @@ build() {
   PYTHON="/usr/bin/python2" ./configure --prefix=/usr --sysconfdir=/etc \
     --enable-null-renderer --with-gtk2 --disable-samples \
     --disable-ogre-renderer --disable-irrlicht-renderer
-
   make
 }
 

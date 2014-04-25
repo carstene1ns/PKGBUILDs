@@ -26,7 +26,6 @@ build() {
   cd $_pkgbase
 
   export PYTHON="/usr/bin/python2"
-
   ./autotool.sh
   ./configure --prefix=/usr --enable-python-binding --with-libgeoip=system
   make

@@ -38,7 +38,6 @@ build() {
     ./configure --prefix=/usr --mandir=/usr/share/man \
         CC='gcc -m32' SDL_CONFIG='/usr/bin/sdl-config-32'
   fi
-
   # force single threaded build
   make -j1
 }

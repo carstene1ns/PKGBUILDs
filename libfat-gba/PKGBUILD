@@ -14,7 +14,6 @@ options=(!strip staticlibs)
 
 build() {
   source /etc/profile.d/devkitarm.sh
-
   make gba-release
 }
 

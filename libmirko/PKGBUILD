@@ -23,7 +23,6 @@ prepare() {
 
 build() {
   source /etc/profile.d/devkitarm.sh
-
   make
 }
 

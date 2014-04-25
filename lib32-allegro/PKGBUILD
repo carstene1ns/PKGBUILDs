@@ -31,7 +31,6 @@ build() {
     -DCMAKE_C_FLAGS="$CFLAGS -m32" \
     -DCMAKE_CXX_FLAGS="$CXXFLAGS -m32" \
     -DWANT_OPENAL=OFF
-
   make
 }
 

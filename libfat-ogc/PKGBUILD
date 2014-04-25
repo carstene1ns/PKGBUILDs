@@ -17,7 +17,6 @@ sha256sums=('b36c26766f0fe13cd1ef822242dd2de09ba4598cbd1d7ddbb48cdaeea7e621af')
 
 build() {
   source /etc/profile.d/devkitppc.sh
-
   make ogc-release
 }
 

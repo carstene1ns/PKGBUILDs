@@ -31,7 +31,6 @@ build() {
     -DPHYSFS_BUILD_WX_TEST=OFF \
     -DPHYSFS_BUILD_STATIC=OFF \
     -DLIB_SUFFIX=32
-
   make
 }
 

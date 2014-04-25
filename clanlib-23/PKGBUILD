@@ -19,10 +19,8 @@ build() {
   cd ClanLib-$pkgver
 
   ./autogen.sh
-
   # disable legacy gl1 renderer and documentation
   ./configure --prefix=/usr --disable-clanGL1 --disable-docs
-
   make
 }
 
@@ -30,6 +28,5 @@ package() {
   cd ClanLib-$pkgver
 
   make DESTDIR="$pkgdir/" install
-
   install -Dm644 COPYING "$pkgdir"/usr/share/licenses/$pkgname/COPYING
 }

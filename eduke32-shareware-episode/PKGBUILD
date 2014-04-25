@@ -19,8 +19,9 @@ prepare() {
 }
 
 package() {
-  # install files
-  install -Dm644 license.txt "$pkgdir"/usr/share/licenses/$pkgname/license.txt
+  # data
   install -d "$pkgdir"/usr/share/games/eduke32
   install -m644 duke.rts {defs,game,user}.con duke3d.grp "$pkgdir"/usr/share/games/eduke32
+  # license
+  install -Dm644 license.txt "$pkgdir"/usr/share/licenses/$pkgname/license.txt
 }

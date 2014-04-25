@@ -2,7 +2,7 @@
 
 _pkgbase=fabother-world
 pkgname=$_pkgbase-git
-pkgver=r57.d15e43e
+pkgver=r62.0b0f404
 pkgrel=1
 pkgdesc='An interpreter for Another World (Out of this world)'
 arch=('i686' 'x86_64')
@@ -16,7 +16,7 @@ install=$_pkgbase.install
 source=($_pkgbase::"git+https://github.com/fabiensanglard/Another-World-Bytecode-Interpreter.git"
         "$_pkgbase.sh" "$_pkgbase.png" "$_pkgbase.desktop")
 sha256sums=('SKIP'
-            'b1ea95384f14d0229a0f62eca2d2bea56b7c7f5a4e8dffe7ac6f5ddfbdd542d3'
+            'edc27018901b0d72fdeae797643070dbfa53dc2220d9f96af059b1aff4430aa9'
             'b57c493f1ae135ebc2b809211db091957fa0a7b755856ef1637e58cdd7dd216e'
             '897a8ae9f3bf64e44dea5981b0d1189ea80e4aedf0b4ab039b7e969c7eb7593f')
 
@@ -43,7 +43,8 @@ package() {
   # doc
   install -Dm644 README "$pkgdir"/usr/share/doc/$_pkgbase/README
   install -m644 README.newraw "$pkgdir"/usr/share/doc/$_pkgbase
-  # .desktop file
+  tail -n 210 main.cpp > "$pkgdir"/usr/share/doc/$_pkgbase/implementation.txt
+  # desktop entry
   install -Dm644 ../$_pkgbase.png "$pkgdir"/usr/share/pixmaps/$_pkgbase.png
   install -Dm644 ../$_pkgbase.desktop "$pkgdir"/usr/share/applications/$_pkgbase.desktop
 }

@@ -25,7 +25,6 @@ build() {
   cd libfat
 
   source /etc/profile.d/devkitppc.sh
-
   make include/libfatversion.h
   make ogc-release
 }

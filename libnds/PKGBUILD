@@ -22,7 +22,6 @@ noextract=("nds-examples-$_pkgverexamples.tar.bz2")
 
 build() {
   source /etc/profile.d/devkitarm.sh
-
   make
 }
 
