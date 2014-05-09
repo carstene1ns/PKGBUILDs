@@ -1,6 +1,5 @@
 # Maintainer: carstene1ns <url/mail: arch carsten-teibes de>
-# Contributor: Frederic Bezies <fredbezies@gmail.com>
-# Contributor: Ronan Rabouin <darkbaboon@gmail.com>
+# Contributors: Frederic Bezies, Ronan Rabouin
 
 _pkgbase=quake2-ctf
 pkgname=yamagi-$_pkgbase
