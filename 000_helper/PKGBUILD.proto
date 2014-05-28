@@ -1,0 +1,37 @@
+# Maintainer: carstene1ns <arch carsten-teibes de> - http://git.io/ctPKG
+
+pkgname=
+pkgver=1
+pkgrel=1
+pkgdesc=""
+arch=('i686' 'x86_64')
+url=""
+license=('custom')
+depends=()
+makedepends=()
+optdepends=()
+conflicts=()
+provides=()
+install=$pkgname.install
+source=(
+        $pkgname.png
+        $pkgname.desktop)
+md5sums=('SKIP')
+sha256sums=('SKIP')
+
+build() {
+  cd $pkgname-$pkgver
+
+  ./configure --prefix=/usr
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+
+  make DESTDIR="$pkgdir/" install
+
+  # desktop entry
+  install -Dm644 ../$pkgname.png "$pkgdir"/usr/share/pixmaps/$pkgname.png
+  install -Dm644 ../$pkgname.desktop "$pkgdir"/usr/share/applications/$pkgname.desktop
+}
