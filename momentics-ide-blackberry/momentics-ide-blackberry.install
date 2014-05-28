@@ -1,0 +1,9 @@
+
+post_install() {
+  echo "Do not forget to install BB10 API Levels. See this page for more information:"
+  echo "https://developer.blackberry.com/native/documentation/core/com.qnx.doc.ide.userguide/topic/api_level.html"
+}
+
+post_upgrade() {
+  post_install
+}
