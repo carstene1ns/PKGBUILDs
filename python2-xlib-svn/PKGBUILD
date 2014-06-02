@@ -4,7 +4,7 @@
 pkgname=python2-xlib-svn
 pkgver=0.15rc1.r171
 pkgrel=1
-pkgdesc="Python2 xlib library (development version)"
+pkgdesc="A fully functional X client library for Python programs (development version)"
 arch=("any")
 url="http://python-xlib.sourceforge.net/"
 license=('GPL')
