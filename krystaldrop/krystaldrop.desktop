@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Krystal Drop
+Comment=A free clone of the excellent NeoGeo's Magical Drop puzzle game
+Exec=kdrop
+Icon=krystaldrop
+Terminal=false
+Categories=Game;LogicGame;
