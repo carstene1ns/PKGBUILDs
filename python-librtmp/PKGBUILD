@@ -9,7 +9,9 @@ pkgdesc="Python interface to librtmp"
 arch=('i686' 'x86_64')
 url="https://github.com/chrippa/python-librtmp"
 license=('custom: Simplified BSD')
-makedepends=('python-setuptools' 'python2-setuptools' 'python-cffi' 'python2-cffi')
+makedepends=('python-setuptools' 'python-cffi'
+             'python2-setuptools' 'python2-cffi' 'python2-singledispatch'
+             'rtmpdump')
 source=("https://pypi.python.org/packages/source/p/$pkgbase/$pkgbase-$pkgver.tar.gz")
 sha256sums=('0a4385aa59f6f4d09ffa95cb85c1b0acd4678c8af3f21f45dd009d5f807a9635')
 
