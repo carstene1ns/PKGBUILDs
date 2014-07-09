@@ -38,6 +38,7 @@ __*.txt
 *-package.log
 *-pkgver.log
 *-prepare.log
+*-check.log
 
 # files for specific packages
 # srb2-data data files:
