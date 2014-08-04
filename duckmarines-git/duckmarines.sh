@@ -1,3 +1,1 @@
-#!/bin/sh
-
-exec love /usr/share/duckmarines/duckmarines.love "$@"
+../duckmarines/duckmarines.sh
