@@ -15,10 +15,13 @@
 *.exe
 *.7z
 *.bin
+*.c
 
-# deprecated patches and notes
-__*.patch
-__*.txt
+# signed source packages
+*.asc
+
+# deprecated patches, notes, etc.
+__*.*
 
 # all subfolders (extracted sources, built package tree, vcs checkouts, etc.)
 */**/
@@ -41,15 +44,17 @@ __*.txt
 *-check.log
 
 # files for specific packages
-# srb2-data data files:
-srb2-data/*.xpm
-srb2-data/*.dta
-srb2-data/*.plr
-srb2-data/*.wpn
-srb2-data/*.wad
-# srb2-bin binary:
-srb2-bin/lsdlsrb2
+# love packages
+*.love
+# srb2 data files:
+srb2/SDL_icon.xpm
 # poole symlink:
 python2-poole-hg/poole
 # sdl_sound symlink:
-sdl_sound-hg/sdl_sound
+sdl_sound-patched-hg/sdl_sound
+# raine data archives
+raine-emudx/*.dx2
+# alephone markdown file
+alephone/README.md
+# duckmarines icon
+duckmarines/duckmarines.png
