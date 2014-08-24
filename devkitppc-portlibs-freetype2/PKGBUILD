@@ -24,7 +24,5 @@ build() {
 }
 
 package() {
-  cd freetype-$pkgver
-
-  make DESTDIR="$pkgdir" install
+  make -C freetype-$pkgver DESTDIR="$pkgdir" install
 }
