@@ -48,8 +48,6 @@ __*.*
 *.love
 # srb2 data files:
 srb2/SDL_icon.xpm
-# poole symlink:
-python2-poole-hg/poole
 # sdl_sound symlink:
 sdl_sound-patched-hg/sdl_sound
 # raine data archives
