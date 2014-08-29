@@ -16,6 +16,7 @@
 *.7z
 *.bin
 *.c
+*.gem
 
 # signed source packages
 *.asc
