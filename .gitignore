@@ -8,6 +8,7 @@
 *.tar.bz2
 *.tar.xz
 *.zip
+*.rar
 *.deb
 *.rpm
 # installers
