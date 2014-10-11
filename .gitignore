@@ -50,6 +50,8 @@ __*.*
 *.love
 # srb2 data files:
 srb2/SDL_icon.xpm
+# sdl2-hg symlink:
+lib32-sdl2-hg/lib32-sdl2
 # sdl_sound symlink:
 sdl_sound-patched-hg/sdl_sound
 # raine data archives

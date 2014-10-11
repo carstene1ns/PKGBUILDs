@@ -8,9 +8,9 @@ pkgdesc="A library for portable low-level access to video, audio and input (Vers
 arch=('x86_64')
 url="http://www.libsdl.org"
 license=('ZLIB')
-depends=('lib32-libxext' 'lib32-libxrender' 'lib32-libx11' 'lib32-libgl' 'lib32-libxcursor')
 provides=("${pkgname%-*}")
 conflicts=("${pkgname%-*}")
+depends=('lib32-libxext' 'lib32-libxrender' 'lib32-libx11' 'lib32-libgl' 'lib32-libxcursor')
 makedepends=('mercurial' 'cmake' 'gcc-multilib' 'lib32-alsa-lib' 'lib32-mesa' 'lib32-libpulse' 'lib32-libxinerama'
 	         'lib32-libxkbcommon' 'lib32-libxrandr')
 optdepends=('lib32-alsa-lib: ALSA audio driver'
