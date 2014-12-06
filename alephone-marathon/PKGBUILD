@@ -1,4 +1,4 @@
-# Maintainer: carstene1ns <url/mail: arch carsten-teibes de>
+# Maintainer: carstene1ns <arch carsten-teibes de> - http://git.io/ctPKG
 # Contributor: prettyvanilla <prettyvanilla@lavabit.com>
 # Contributor: Christoph Zeiler <rabyte*gmail>
 # Contributor: Marcin Skory <armitage at q84fh dot net>
@@ -21,7 +21,7 @@ source=(Marathon-$pkgver-Data.zip::"http://marathon.sourceforge.net/download/dat
 sha256sums=('9cbdcff88c1aa775799a8d52536003aab88f26e3938b694d60ec8543aee830f1'
             '64deb7f505ea1ec29e10037a2dcc297abed787b0ec4790d231bff6d08a0408d0'
             '0dde70e490e4cb3e262ed7cc4f7ef6bdc49db557a14fc8674de38b2a9a426504'
-            '8ac0f70c70d1ded07ff468b97871f1309cae2d786771ed151f4ddcca0a9b7a25')
+            '49273db294ee0ba9f4b985a144969bae241877934b23d82a7de1522db705ee88')
 
 package() {
   # scenario data
