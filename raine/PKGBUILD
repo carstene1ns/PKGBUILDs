@@ -56,7 +56,7 @@ prepare() {
 }
 
 build() {
-  make -C "$srcdir"/raine-$_gitver VERBOSE=1
+  make -C "$srcdir"/raine-$_gitver #VERBOSE=1
 }
 
 package() {
