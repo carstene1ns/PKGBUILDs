@@ -21,6 +21,7 @@
 
 # signed source packages
 *.asc
+*.sig
 
 # deprecated patches, notes, etc.
 __*.*
