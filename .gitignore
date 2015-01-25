@@ -37,6 +37,7 @@ __*.*
 
 # generated files
 .AURINFO
+.SRCINFO
 
 # chroot building logs
 *-namcap.log
