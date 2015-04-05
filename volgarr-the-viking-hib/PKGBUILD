@@ -16,6 +16,17 @@ sha256sums=('e99e42b0dade244080ac17717c1a5caf292b5d2a57d5d3e659eae52e00eca6de'
             '246282e4132b7a8ae25d22aa926ee651164420776b321a69f9a4385a2ec7724a')
 PKGEXT=".pkg.tar"
 
+# You need to download the Humble Bundle file manually or you can configure
+# DLAGENTS in makepkg.conf to auto-download.
+#
+# For example, hib-dlagent (https://aur.archlinux.org/packages/hib-dlagent/)
+# can be used to download files. Add something like this in your makepkg.conf
+# (you need to tweak the options to your needs):
+# DLAGENTS+=('hib::/usr/bin/hib-dlagent -k $KEY -u $USER -p $PASS -o %o %u')
+#
+# The following is just a fallback to the above to notify the user:
+DLAGENTS+=("hib::/usr/bin/echo %u - This is is not a real URL, you need to download the humble bundle file manually to \"$PWD\" or setup a hib:// DLAGENT. Read this PKGBUILD for more information.")
+
 package() {
   install -d "$pkgdir"/opt/volgarr-the-viking
   # data
