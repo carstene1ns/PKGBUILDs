@@ -24,4 +24,10 @@ package() {
   install -m755 Linux/linux.x86  "$pkgdir"/opt/pixel-piracy
   # launcher
   install -Dm755 $pkgname.sh "$pkgdir"/usr/bin/pixel-piracy
+  # icon and .desktop
+  mkdir -p "$pkgdir"/usr/share/{pixmaps,applications}
+  install -Dm644 pixel-piracy.desktop \
+                 "$pkgdir"/usr/share/applications/pixel-piracy.desktop
+  ln -s /opt/pixel-piracy/linux_Data/Resources/UnityPlayer.png \
+        "$pkgdir"/usr/share/pixmaps/pixel-piracy.png
 }
