@@ -1,10 +1,9 @@
 [Desktop Entry]
+Type=Application
 Name=Pixel Piracy
 Comment=A side-scrolling 2d, real time strategy/sandbox/simulation game
 Exec=pixel-piracy
 Icon=pixel-piracy
-Type=Application
 Terminal=false
-StartupNotify=true
-Categories=Game;AudioVideo;
-Encoding=UTF-8
+StartupNotify=false
+Categories=Game;
