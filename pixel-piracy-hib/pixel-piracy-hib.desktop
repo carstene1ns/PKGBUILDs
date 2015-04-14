@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Pixel Piracy
+Comment=A side-scrolling 2d, real time strategy/sandbox/simulation game
+Exec=pixel-piracy
+Icon=pixel-piracy
+Terminal=false
+StartupNotify=false
+Categories=Game;
