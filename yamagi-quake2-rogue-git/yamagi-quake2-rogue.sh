@@ -1,0 +1,1 @@
+../yamagi-quake2-rogue/yamagi-quake2-rogue.sh
