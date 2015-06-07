@@ -1,0 +1,8 @@
+
+post_install() {
+  echo "Game instructions are in '/usr/share/doc/gameandwatch/README'."
+}
+
+post_upgrade() {
+  post_install
+}
